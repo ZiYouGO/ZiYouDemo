@@ -1,4 +1,4 @@
-截图:
+##项目截图##
 ![原型.jpeg](https://github.com/ZiYouGO/ZiYouDemo/blob/master/GUI-Demo/screenshot/Screenshot_2016-04-08-14-36-03.jpeg)
 
 ![原型.jpeg](https://github.com/ZiYouGO/ZiYouDemo/blob/master/GUI-Demo/screenshot/Screenshot_2016-04-08-14-36-15.jpeg)
