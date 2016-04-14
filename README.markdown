@@ -1,4 +1,6 @@
-#项目截图##
+#重要提示
+项目存储在GUI-Demo文件夹中，不是ZiYou文件夹，用androidstudio打开GUI-Demo！！！！
+#项目截图
   ![原型.jpeg](https://github.com/ZiYouGO/ZiYouDemo/blob/master/GUI-Demo/screenshot/Screenshot_2016-04-08-14-36-03.jpeg)  ![原型.jpeg](https://github.com/ZiYouGO/ZiYouDemo/blob/master/GUI-Demo/screenshot/Screenshot_2016-04-08-14-36-15.jpeg)
 
   ![原型.jpeg](https://github.com/ZiYouGO/ZiYouDemo/blob/master/GUI-Demo/screenshot/Screenshot_2016-04-08-14-36-22.jpeg)  ![原型.jpeg](https://github.com/ZiYouGO/ZiYouDemo/blob/master/GUI-Demo/screenshot/Screenshot_2016-04-08-14-36-32.jpeg)
