@@ -142,8 +142,6 @@ public class MapActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-
     }
 
     @Override
