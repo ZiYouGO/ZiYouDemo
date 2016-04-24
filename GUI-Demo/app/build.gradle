@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
-
+    compileSdkVersion 23
+    buildToolsVersion '23.0.3'
+    useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.mingle.myapplication"
-        minSdkVersion 14
-        targetSdkVersion 22
+        minSdkVersion 21
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
@@ -21,13 +21,21 @@ android {
 
 dependencies {
     compile project(':sweetsheet')
-    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
-    compile 'com.android.support:design:22.2.1'
+//    compile 'com.android.support:design:22.2.1'
     compile files('libs/baidumapapi_base_v3_7_3.jar')
     compile files('libs/baidumapapi_cloud_v3_7_3.jar')
     compile files('libs/baidumapapi_map_v3_7_3.jar')
     compile files('libs/baidumapapi_radar_v3_7_3.jar')
     compile files('libs/baidumapapi_search_v3_7_3.jar')
     compile files('libs/baidumapapi_util_v3_7_3.jar')
+    //bmob-sdk ：Bmob的android sdk包
+    compile 'cn.bmob.android:bmob-sdk:3.4.6'
+    compile 'cn.bmob.android:bmob-im:2.0.3'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'com.squareup.okio:okio:1.4.0'
+    compile 'com.android.support:support-v4:23.2.1'
 }
+
+
