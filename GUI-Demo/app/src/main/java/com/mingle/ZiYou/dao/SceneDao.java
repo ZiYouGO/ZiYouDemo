@@ -1,55 +1,24 @@
 package com.mingle.ZiYou.dao;
 
-import cn.bmob.v3.BmobObject;
-import cn.bmob.v3.datatype.BmobFile;
+
+import com.mingle.ZiYou.bean.Scene;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by jd on 2016/4/14.
+ * Created by Kinney on 2016/4/24.
  */
-public class SceneDao extends BmobObject {
-    Integer sid;
-    String sname;
-    String scity;
-    BmobFile spicture;
-    Integer shot;
+public class SceneDao {
+    private List<Scene> sceneList = new ArrayList<Scene>();//所有景区列表
 
-    public Integer getSid() {
-        return sid;
+    //获得景区所有列表
+    public List<Scene> getAllScenes(){
+        return null;
+    }
+    //通过景区名字获得景区
+    public Scene getSceneByName(String name){
+        return null;
     }
 
-    public void setSid(Integer sid) {
-        this.sid = sid;
-    }
-
-    public String getSname() {
-        return sname;
-    }
-
-    public void setSname(String sname) {
-        this.sname = sname;
-    }
-
-    public String getScity() {
-        return scity;
-    }
-
-    public void setScity(String scity) {
-        this.scity = scity;
-    }
-
-    public BmobFile getSpicture() {
-        return spicture;
-    }
-
-    public void setSpicture(BmobFile spicture) {
-        this.spicture = spicture;
-    }
-
-    public Integer getShot() {
-        return shot;
-    }
-
-    public void setShot(Integer shot) {
-        this.shot = shot;
-    }
 }
