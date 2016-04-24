@@ -87,12 +87,18 @@
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="design-22.2.1" level="project" />
+    <orderEntry type="library" exported="" name="baidumapapi_base_v3_7_3" level="project" />
     <orderEntry type="library" exported="" name="play-services-basement-8.1.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-appindexing-8.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.2.1" level="project" />
+    <orderEntry type="library" exported="" name="baidumapapi_radar_v3_7_3" level="project" />
+    <orderEntry type="library" exported="" name="baidumapapi_cloud_v3_7_3" level="project" />
+    <orderEntry type="library" exported="" name="baidumapapi_search_v3_7_3" level="project" />
+    <orderEntry type="library" exported="" name="baidumapapi_map_v3_7_3" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.2.1" level="project" />
     <orderEntry type="library" exported="" name="library-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.2.1" level="project" />
+    <orderEntry type="library" exported="" name="baidumapapi_util_v3_7_3" level="project" />
     <orderEntry type="module" module-name="sweetsheet" exported="" />
   </component>
 </module>

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.baidu.mapapi.map.MapView;
 import com.mingle.entity.MenuEntity;
 import com.mingle.myapplication.R;
 import com.mingle.sweetpick.BlurEffect;
@@ -19,6 +20,7 @@ import com.mingle.sweetpick.SweetSheet;
 import com.mingle.sweetpick.ViewPagerDelegate;
 
 import java.util.ArrayList;
+import com.baidu.mapapi.SDKInitializer;
 
 public class MapActivity extends AppCompatActivity {
 
@@ -28,12 +30,15 @@ public class MapActivity extends AppCompatActivity {
     private RelativeLayout rl;
     Button Sheet;
     Button Back;
+    MapView mMapView = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //调用地图组建前使用的一句话
+        SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_map);
 
+        mMapView = (MapView)findViewById(R.id.bmapView);
         rl = (RelativeLayout) findViewById(R.id.rl);
 
         Back=(Button)findViewById(R.id.Back);
@@ -55,7 +60,6 @@ public class MapActivity extends AppCompatActivity {
         setupViewpager();
         setupRecyclerView();
         setupCustomView();
-
     }
 
     private void setupCustomView() {
@@ -167,5 +171,24 @@ public class MapActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //在activity执行onDestroy时执行mMapView.onDestroy()，实现地图生命周期管理
+        mMapView.onDestroy();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //在activity执行onResume时执行mMapView. onResume ()，实现地图生命周期管理
+        mMapView.onResume();
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //在activity执行onPause时执行mMapView. onPause ()，实现地图生命周期管理
+        mMapView.onPause();
     }
 }

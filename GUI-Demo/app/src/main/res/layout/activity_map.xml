@@ -41,34 +41,49 @@
                     android:layout_alignParentEnd="true" />
             </RelativeLayout>
 
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_margin="20dp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="以下是百度地图"/>
 
-                android:src="@mipmap/ic_launcher"
-                android:layout_gravity="center_horizontal"
-                android:layout_height="200dp"/>
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_margin="100dp"
+            <com.baidu.mapapi.map.MapView
+                android:id="@+id/bmapView"
+                android:layout_width="450dp"
+                android:layout_height="430dp"
+                android:clickable="true" />
 
-                android:src="@mipmap/ic_launcher"
-                android:layout_gravity="center_horizontal"
-                android:layout_height="400dp"/>
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_margin="100dp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="以上是百度地图"/>
+            <!--<ImageView-->
+                <!--android:layout_width="48dp"-->
+                <!--android:layout_margin="20dp"-->
 
-                android:src="@mipmap/ic_launcher"
-                android:layout_gravity="center_horizontal"
-                android:layout_height="400dp"/>
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_margin="100dp"
+                <!--android:src="@mipmap/ic_launcher"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_height="200dp"/>-->
+            <!--<ImageView-->
+                <!--android:layout_width="48dp"-->
+                <!--android:layout_margin="100dp"-->
 
-                android:src="@mipmap/ic_launcher"
-                android:layout_gravity="center_horizontal"
-                android:layout_height="400dp"/>
+                <!--android:src="@mipmap/ic_launcher"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_height="400dp"/>-->
+            <!--<ImageView-->
+                <!--android:layout_width="48dp"-->
+                <!--android:layout_margin="100dp"-->
+
+                <!--android:src="@mipmap/ic_launcher"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_height="400dp"/>-->
+            <!--<ImageView-->
+                <!--android:layout_width="48dp"-->
+                <!--android:layout_margin="100dp"-->
+
+                <!--android:src="@mipmap/ic_launcher"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_height="400dp"/>-->
 
 
         </LinearLayout>
