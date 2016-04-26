@@ -16,6 +16,7 @@ import android.widget.ListView;
 
 import com.mingle.ZiYou.Adapter.MyAdapter;
 import com.mingle.ZiYou.Content.MapActivity;
+import com.mingle.ZiYou.Content.TestMapActivity;
 import com.mingle.myapplication.R;
 
 import java.util.ArrayList;
