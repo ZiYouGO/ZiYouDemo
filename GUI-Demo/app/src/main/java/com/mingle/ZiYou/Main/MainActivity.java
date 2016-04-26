@@ -16,6 +16,7 @@ import android.widget.ListView;
 
 import com.mingle.ZiYou.Adapter.MyAdapter;
 import com.mingle.ZiYou.Content.MapActivity;
+import com.mingle.ZiYou.Content.TestMapActivity;
 import com.mingle.myapplication.R;
 
 import java.util.ArrayList;
@@ -50,7 +51,9 @@ public class MainActivity extends AppCompatActivity
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                //Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                //测试用，启动TestMapActivity
+                Intent intent = new Intent(MainActivity.this, TestMapActivity.class);
                 startActivity(intent);
             }
         });
