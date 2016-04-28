@@ -19,6 +19,7 @@ import java.util.List;
 public class TestMapActivity extends AppCompatActivity {
     MapView mMapView;
     RoutePlanSearch mSearch;
+    RoutePlanSearch mSearch2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,7 @@ public class TestMapActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mSearch = RoutePlanSearch.newInstance();
+                mSearch2 = RoutePlanSearch.newInstance();
                 OnGetRoutePlanResultListener listener = new OnGetRoutePlanResultListener() {
                     @Override
                     public void onGetWalkingRouteResult(WalkingRouteResult walkingRouteResult) {
@@ -63,12 +65,22 @@ public class TestMapActivity extends AppCompatActivity {
                     }
                 };
                 mSearch.setOnGetRoutePlanResultListener(listener);
-                PlanNode stNode = PlanNode.withCityNameAndPlaceName("北京", "龙泽");
-                PlanNode enNode = PlanNode.withCityNameAndPlaceName("北京", "西单");
+                mSearch2.setOnGetRoutePlanResultListener(listener);
+                PlanNode stNode = PlanNode.withCityNameAndPlaceName("北京", "北京交通大学逸夫楼");
+                PlanNode enNode = PlanNode.withCityNameAndPlaceName("北京", "北京交通大学思源楼");
 //                mSearch.drivingSearch((new DrivingRoutePlanOption())
 //                        .from(stNode)
 //                        .to(enNode));
                 mSearch.walkingSearch((new WalkingRoutePlanOption())
+                        .from(stNode)
+                        .to(enNode));
+
+                stNode = PlanNode.withCityNameAndPlaceName("北京", "北京交通大学思源楼");
+                enNode = PlanNode.withCityNameAndPlaceName("北京", "北京交通大学西门");
+//                mSearch.drivingSearch((new DrivingRoutePlanOption())
+//                        .from(stNode)
+//                        .to(enNode));
+                mSearch2.walkingSearch((new WalkingRoutePlanOption())
                         .from(stNode)
                         .to(enNode));
                 //记得这里需要销毁
