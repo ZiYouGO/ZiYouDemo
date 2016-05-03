@@ -23,7 +23,7 @@ dependencies {
     compile project(':sweetsheet')
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
-//    compile 'com.android.support:design:22.2.1'
+    compile 'com.android.support:design:23.3.0'
     compile files('libs/baidumapapi_base_v3_7_3.jar')
     compile files('libs/baidumapapi_cloud_v3_7_3.jar')
     compile files('libs/baidumapapi_map_v3_7_3.jar')
@@ -35,7 +35,6 @@ dependencies {
     compile 'cn.bmob.android:bmob-im:2.0.3'
     compile 'com.squareup.okhttp:okhttp:2.4.0'
     compile 'com.squareup.okio:okio:1.4.0'
-    compile 'com.android.support:support-v4:23.2.1'
 }
 
 
