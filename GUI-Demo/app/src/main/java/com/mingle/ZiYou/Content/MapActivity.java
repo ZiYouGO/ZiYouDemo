@@ -92,7 +92,7 @@ public class MapActivity extends AppCompatActivity {
 
         mSweetSheet = new SweetSheet(rl);
 
-       final ArrayList<MenuEntity> list =getData();
+        final ArrayList<MenuEntity> list =getData();
         mSweetSheet.setMenuList(list);
 
         mSweetSheet.setDelegate(new RecyclerViewDelegate(true));
@@ -105,9 +105,9 @@ public class MapActivity extends AppCompatActivity {
                 //即时改变当前项的颜色
                 if(key==0&&position!=0){
 
-                list.get(position).titleColor = 0xff5823ff;
-                list.get(position).iconId=R.drawable.checkbox;
-                key=1;
+                    list.get(position).titleColor = 0xff5823ff;
+                    list.get(position).iconId=R.drawable.checkbox;
+                    key=1;
                 }else if(key!=0&&position!=0) {
                     list.get(position).titleColor = 0xff000000;
                     list.get(position).iconId=R.drawable.checkbox_empty;
@@ -182,10 +182,6 @@ public class MapActivity extends AppCompatActivity {
                 return false;
             }
         });
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/clo
     }
 
     @Override
@@ -224,11 +220,11 @@ public class MapActivity extends AppCompatActivity {
         menuEntity1.title = "                           确定路线";
         list.add(menuEntity1);
         for (int i=0;i<10;i++){
-        MenuEntity menuEntity = new MenuEntity();
-        menuEntity.iconId = R.drawable.checkbox_empty;
-        menuEntity.titleColor = 0xff000000;
-        menuEntity.title = "QQ";
-        list.add(menuEntity);
+            MenuEntity menuEntity = new MenuEntity();
+            menuEntity.iconId = R.drawable.checkbox_empty;
+            menuEntity.titleColor = 0xff000000;
+            menuEntity.title = "QQ";
+            list.add(menuEntity);
         }
         return  list;
     }
