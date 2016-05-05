@@ -33,7 +33,7 @@ public class TestMapActivity extends AppCompatActivity {
     //定位相关
     public LocationClient mLocationClient = null;
     private static final int UPDATE_TIME = 5000;//间隔时间之后重新获取定位
-    public BDLocationListener myListener = new MyLocationListener();//监听器
+    public BDLocationListener myListener = new myLocationListener();//监听器
     BitmapDescriptor mCurrentMarker;//定位小图标
     MyLocationConfiguration.LocationMode mCurrentMode;//定位模式
     boolean isFirstLoc = true;//是否是首次定位
@@ -82,7 +82,7 @@ public class TestMapActivity extends AppCompatActivity {
     }
 
     //位置监听器
-    public class MyLocationListener implements BDLocationListener
+    public class myLocationListener implements BDLocationListener
     {
         @Override
         public void onReceiveLocation(BDLocation location) {
