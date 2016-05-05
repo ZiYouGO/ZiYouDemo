@@ -182,7 +182,10 @@ public class MapActivity extends AppCompatActivity {
                 return false;
             }
         });
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/clo
     }
 
     @Override
