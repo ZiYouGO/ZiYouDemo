@@ -3,6 +3,7 @@ package com.mingle.ZiYou.daoImpl;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.mingle.ZiYou.bean.Comment;
 import com.mingle.ZiYou.bean.Point;
 import com.mingle.ZiYou.daoInterface.PointInterface;
 

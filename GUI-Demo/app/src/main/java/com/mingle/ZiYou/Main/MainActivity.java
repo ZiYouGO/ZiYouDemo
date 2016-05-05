@@ -23,6 +23,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.bmob.v3.Bmob;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -35,7 +37,9 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // 初始化 Bmob SDK
+        // 使用时请将第二个参数Application ID替换成你在Bmob服务器端创建的Application ID
+        Bmob.initialize(this, "c1c024e7612cd05fcfecbc3d9909b3ee");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ListView listView=(ListView)findViewById(R.id.list);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
