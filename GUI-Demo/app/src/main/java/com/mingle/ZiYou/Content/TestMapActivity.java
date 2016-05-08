@@ -39,7 +39,7 @@ import com.mingle.myapplication.R;
 import java.util.List;
 
 public class TestMapActivity extends AppCompatActivity {
-    //UI相关
+    //相关
     private MapView mapView;
     BaiduMap baiduMap;
 
@@ -51,67 +51,11 @@ public class TestMapActivity extends AppCompatActivity {
     MyLocationConfiguration.LocationMode mCurrentMode;//定位模式
     boolean isFirstLoc = true;//是否是首次定位
 
-
-public class TestMapActivity extends AppCompatActivity {
-    MapView mMapView;
-    RoutePlanSearch mSearch;
-    RoutePlanSearch mSearch2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_test_map);
-
-        //地图控件
-        mMapView = (MapView)findViewById(R.id.b_test_mapView);
-        final BaiduMap mBaidumap = mMapView.getMap();
-        //mBaidumap.setMapType(BaiduMap.MAP_TYPE_SATELLITE);
-        //导航按钮事件
-        Button btn = (Button)findViewById(R.id.btn_Guide);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mSearch = RoutePlanSearch.newInstance();
-                //mSearch2 = RoutePlanSearch.newInstance();
-                OnGetRoutePlanResultListener listener = new OnGetRoutePlanResultListener() {
-                    @Override
-                    public void onGetWalkingRouteResult(WalkingRouteResult walkingRouteResult) {
-                        if(walkingRouteResult.error == SearchResult.ERRORNO.NO_ERROR){
-                            WalkingRouteOverlay overlay = new WalkingRouteOverlay(mBaidumap);
-                            mBaidumap.setOnMarkerClickListener(overlay);
-                            overlay.setData(walkingRouteResult.getRouteLines().get(0));
-                            overlay.addToMap();
-                            overlay.zoomToSpan();
-                        }
-                        else Log.e("mxy", "no result");
-                    }
-
-                    @Override
-                    public void onGetTransitRouteResult(TransitRouteResult transitRouteResult) {
-
-                    }
-
-                    @Override
-                    public void onGetDrivingRouteResult(DrivingRouteResult drivingRouteResult) {
-
-                    }
-
-                    @Override
-                    public void onGetBikingRouteResult(BikingRouteResult bikingRouteResult) {
-
-                    }
-                };
-                mSearch.setOnGetRoutePlanResultListener(listener);
-                PlanNode stNode = PlanNode.withCityNameAndPlaceName("北京", "北京交通大学逸夫楼");
-                PlanNode enNode = PlanNode.withCityNameAndPlaceName("北京", "北京交通大学思源楼");
-                mSearch.walkingSearch((new WalkingRoutePlanOption())
-                        .from(stNode)
-                        .to(enNode));
-                //记得这里需要销毁
-                //mSearch.destroy();
-            }
-        });
-
 
         //获取布局上的MapView组件，并设置地图类型与偏好
         mapView = (MapView) findViewById(R.id.b_test_mapView);
@@ -120,7 +64,7 @@ public class TestMapActivity extends AppCompatActivity {
         baiduMap.setMyLocationEnabled(true);
         mCurrentMarker = BitmapDescriptorFactory.fromResource(R.drawable.icon_gcoding);
         mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
-        MyLocationConfiguration config = new MyLocationConfiguration(mCurrentMode,true,mCurrentMarker);
+        MyLocationConfiguration config = new MyLocationConfiguration(mCurrentMode, true, mCurrentMarker);
         baiduMap.setMyLocationConfigeration(config);
 
         //定位初始化
@@ -133,7 +77,7 @@ public class TestMapActivity extends AppCompatActivity {
         mLocationClient.requestLocation();
     }
 
-    private void initLocation(){
+    private void initLocation() {
         LocationClientOption option = new LocationClientOption();
         option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy
         );//可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
@@ -151,8 +95,7 @@ public class TestMapActivity extends AppCompatActivity {
     }
 
     //位置监听器
-    public class MyLocationListener implements BDLocationListener
-    {
+    public class MyLocationListener implements BDLocationListener {
         @Override
         public void onReceiveLocation(BDLocation location) {
             // map view 销毁后不在处理新接收的位置
@@ -227,8 +170,7 @@ public class TestMapActivity extends AppCompatActivity {
             //设置定位数据
             baiduMap.setMyLocationData(locData);
             // 设置定位图层的配置（定位模式，是否允许方向信息，用户自定义定位图标）
-            if (isFirstLoc)
-            {
+            if (isFirstLoc) {
                 isFirstLoc = false;
                 LatLng ll = new LatLng(location.getLatitude(),
                         location.getLongitude());
@@ -239,13 +181,15 @@ public class TestMapActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mLocationClient != null && mLocationClient.isStarted()) {
-            mLocationClient.stop();
-            mLocationClient = null;
-        }
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
+            if (mLocationClient != null && mLocationClient.isStarted()) {
 
+                mLocationClient = null;
+            }
+            mLocationClient.stop();
+
+        }
     }
 }
