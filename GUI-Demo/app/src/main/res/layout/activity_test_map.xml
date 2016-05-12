@@ -11,6 +11,7 @@
     android:background="#ff8b90af"
     tools:context="com.mingle.ZiYou.Content.TestMapActivity">
 
+
     <com.baidu.mapapi.map.MapView
         android:id="@+id/b_test_mapView"
         android:layout_width="450dp"
