@@ -21,11 +21,14 @@ import com.baidu.mapapi.map.Marker;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.mingle.ZiYou.clusterutil.clustering.ClusterItem;
+import com.mingle.ZiYou.clusterutil.clustering.ClusterManager;
 import com.mingle.myapplication.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class TestMapActivity extends AppCompatActivity {
+public class TestMapActivity extends AppCompatActivity implements BaiduMap.OnMapLoadedCallback{
     //UI相关
     private MapView mapView;
     BaiduMap baiduMap;
@@ -38,6 +41,11 @@ public class TestMapActivity extends AppCompatActivity {
     MyLocationConfiguration.LocationMode mCurrentMode;//定位模式
     boolean isFirstLoc = true;//是否是首次定位
 
+    //标注相关
+    MapStatus ms;
+    private ClusterManager<MyItem> mClusterManager;
+    private myMarkerListener markerListener = new myMarkerListener();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,21 +55,33 @@ public class TestMapActivity extends AppCompatActivity {
         //获取布局上的MapView组件，并设置地图类型与偏好
         mapView = (MapView) findViewById(R.id.b_test_mapView);
         baiduMap = mapView.getMap();
-        baiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
-        baiduMap.setMyLocationEnabled(true);
-        mCurrentMarker = BitmapDescriptorFactory.fromResource(R.drawable.icon_gcoding);
-        mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
-        MyLocationConfiguration config = new MyLocationConfiguration(mCurrentMode,true,mCurrentMarker);
-        baiduMap.setMyLocationConfigeration(config);
+//        baiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
+//        baiduMap.setMyLocationEnabled(true);
+//        mCurrentMarker = BitmapDescriptorFactory.fromResource(R.drawable.icon_gcoding);
+//        mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
+//        MyLocationConfiguration config = new MyLocationConfiguration(mCurrentMode,true,mCurrentMarker);
+//        baiduMap.setMyLocationConfigeration(config);
+//
+//        //定位初始化
+//        mLocationClient = new LocationClient(getApplicationContext());     //声明LocationClient类
+//        initLocation();
+//        mLocationClient.registerLocationListener(myListener);    //注册监听函数
+//
+//        //开始定位
+//        mLocationClient.start();
+//        mLocationClient.requestLocation();
 
-        //定位初始化
-        mLocationClient = new LocationClient(getApplicationContext());     //声明LocationClient类
-        initLocation();
-        mLocationClient.registerLocationListener(myListener);    //注册监听函数
-
-        //开始定位
-        mLocationClient.start();
-        mLocationClient.requestLocation();
+        //向地图添加标注
+        ms = new MapStatus.Builder().target(new LatLng(39.914935, 116.403119)).zoom(8).build();
+        baiduMap.setOnMapLoadedCallback(this);
+        baiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(ms));
+        // 定义点聚合管理类ClusterManager
+        mClusterManager = new ClusterManager<MyItem>(this, baiduMap);
+        // 添加Marker点
+        addMarkers();
+        // 设置地图监听，当地图状态发生改变时，进行点聚合运算
+        baiduMap.setOnMapStatusChangeListener(mClusterManager);
+        baiduMap.setOnMarkerClickListener(markerListener);
     }
 
     private void initLocation(){
@@ -171,11 +191,88 @@ public class TestMapActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPause() {
+        mapView.onPause();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        mapView.onResume();
+        super.onResume();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         if (mLocationClient != null && mLocationClient.isStarted()) {
             mLocationClient.stop();
             mLocationClient = null;
+        }
+    }
+
+    //地图加载，初始化MapStatus
+    @Override
+    public void onMapLoaded() {
+        ms = new MapStatus.Builder().zoom(9).build();
+        baiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(ms));
+    }
+
+    /**
+     * 向地图添加Marker点！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+     * 在这里封装每个坐标点的数据
+     */
+    public void addMarkers() {
+        // 添加Marker点
+        LatLng llA = new LatLng(39.963175, 116.400244);
+        LatLng llB = new LatLng(39.942821, 116.369199);
+        LatLng llC = new LatLng(39.939723, 116.425541);
+        LatLng llD = new LatLng(39.906965, 116.401394);
+        LatLng llE = new LatLng(39.956965, 116.331394);
+        LatLng llF = new LatLng(39.886965, 116.441394);
+        LatLng llG = new LatLng(39.996965, 116.411394);
+
+        List<MyItem> items = new ArrayList<MyItem>();
+        items.add(new MyItem(llA));
+        items.add(new MyItem(llB));
+        items.add(new MyItem(llC));
+        items.add(new MyItem(llD));
+        items.add(new MyItem(llE));
+        items.add(new MyItem(llF));
+        items.add(new MyItem(llG));
+
+        mClusterManager.addItems(items);
+    }
+
+    /**
+     * 每个Marker点，包含Marker点坐标以及图标
+     */
+    public class MyItem implements ClusterItem {
+        private final LatLng mPosition;
+
+        public MyItem(LatLng latLng) {
+            mPosition = latLng;
+        }
+
+        @Override
+        public LatLng getPosition() {
+            return mPosition;
+        }
+
+        @Override
+        public BitmapDescriptor getBitmapDescriptor() {
+            return BitmapDescriptorFactory
+                    .fromResource(R.drawable.icon_gcoding);
+        }
+    }
+
+    /*Marker点击事件*/
+    public class myMarkerListener implements BaiduMap.OnMarkerClickListener
+    {
+        @Override
+        public boolean onMarkerClick(Marker marker) {
+            Log.d("marker",marker.toString());
+            return false;
         }
     }
 }
