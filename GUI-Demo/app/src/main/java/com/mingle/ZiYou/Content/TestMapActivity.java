@@ -181,15 +181,15 @@ public class TestMapActivity extends AppCompatActivity {
         }
     }
 
-        @Override
-        protected void onDestroy() {
-            super.onDestroy();
-            if (mLocationClient != null && mLocationClient.isStarted()) {
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mLocationClient != null && mLocationClient.isStarted()) {
 
-                mLocationClient = null;
-            }
-            mLocationClient.stop();
-
+            mLocationClient = null;
         }
+        mLocationClient.stop();
+
     }
 }
+
