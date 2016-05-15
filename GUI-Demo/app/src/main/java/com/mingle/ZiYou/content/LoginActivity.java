@@ -1,4 +1,4 @@
-package com.mingle.ZiYou.content;
+package com.mingle.ZiYou.Content;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

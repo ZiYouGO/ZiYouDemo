@@ -1,26 +1,24 @@
-package com.mingle.ZiYou.adapter;
+package com.mingle.ZiYou.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.mingle.myapplication.R;
 
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by bear4515 on 2016/4/28.
- */
-public class CheckBoxAdapter extends BaseAdapter {
+public class MyAdapter extends BaseAdapter {
 
     private List<Map<String, Object>> data;
     private LayoutInflater layoutInflater;
     private Context context;
-    public CheckBoxAdapter(Context context, List<Map<String, Object>> data){
+    public MyAdapter(Context context, List<Map<String, Object>> data){
         this.context=context;
         this.data=data;
         this.layoutInflater=LayoutInflater.from(context);
@@ -30,7 +28,9 @@ public class CheckBoxAdapter extends BaseAdapter {
      * @author Administrator
      */
     public final class Zujian{
-        public CheckBox checkBox;
+        public ImageView image;
+        public TextView title;
+        public TextView info;
     }
     @Override
     public int getCount() {
@@ -58,13 +58,18 @@ public class CheckBoxAdapter extends BaseAdapter {
             zujian=new Zujian();
             //获得组件，实例化组件
             convertView=layoutInflater.inflate(R.layout.list, null);
-           zujian.checkBox= (CheckBox) convertView.findViewById(R.id.pathCheckBox);
+            zujian.image=(ImageView)convertView.findViewById(R.id.image);
+            zujian.title=(TextView)convertView.findViewById(R.id.title);
+            zujian.info=(TextView)convertView.findViewById(R.id.info);
             convertView.setTag(zujian);
         }else{
             zujian=(Zujian)convertView.getTag();
         }
         //绑定数据
-        zujian.checkBox.setText((String)data.get(position).get("point"));
+        zujian.image.setBackgroundResource((Integer)data.get(position).get("image"));
+        zujian.title.setText((String)data.get(position).get("title"));
+        zujian.info.setText((String)data.get(position).get("info"));
         return convertView;
     }
+
 }
