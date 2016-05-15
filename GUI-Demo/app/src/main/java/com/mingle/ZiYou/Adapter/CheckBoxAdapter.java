@@ -1,4 +1,4 @@
-package com.mingle.ZiYou.adapter;
+package com.mingle.ZiYou.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
