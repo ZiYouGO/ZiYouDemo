@@ -1,4 +1,4 @@
-package com.mingle.ZiYou.Content;
+package com.mingle.ZiYou.content;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
