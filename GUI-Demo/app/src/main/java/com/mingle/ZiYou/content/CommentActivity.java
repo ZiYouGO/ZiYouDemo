@@ -1,10 +1,10 @@
-package com.mingle.ZiYou.content;
+package com.mingle.ZiYou.Content;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
-import com.mingle.ZiYou.adapter.MyAdapter;
+import com.mingle.ZiYou.Adapter.MyAdapter;
 import com.mingle.myapplication.R;
 
 import java.util.ArrayList;
