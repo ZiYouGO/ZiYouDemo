@@ -2,16 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mingle.myapplication">
 
-    <!-- <uses-permission android:name="android.permission.INTERNET"/> -->
-    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> -->
-    <!-- <uses-permission android:name="android.permission.READ_PHONE_STATE"/> -->
-    <!-- <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/> -->
-    <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/> -->
-    <!-- <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/> -->
-    <!-- <uses-permission android:name="android.permission.WRITE_SETTINGS"/> -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
@@ -51,24 +41,18 @@
             android:value="QhefU2kel6d34HT7DqogUeNShh4it5b5" />
 
         <activity
-            android:name="com.mingle.ZiYou.Main.MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name="com.mingle.ZiYou.Content.MapActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.mingle.ZiYou.Content.TestMapActivity" />
+        <activity android:name="com.mingle.ZiYou.Content.mxyOwnMapActivity" />
+        <activity android:name="com.mingle.ZiYou.Main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.mingle.ZiYou.Content.MapActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
-    <activity android:name="com.mingle.ZiYou.content.TestMapActivity"></activity>
-
-    <activity android:name="com.mingle.ZiYou.content.mxyOwnMapActivity"></activity>
-
     </application>
 
 </manifest>
