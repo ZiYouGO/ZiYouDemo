@@ -1,11 +1,8 @@
-package com.mingle.ZiYou.Content;
+package com.mingle.ZiYou.content;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-
-import android.view.View;
-import android.widget.Button;
 
 
 import com.baidu.location.BDLocation;
@@ -17,9 +14,6 @@ import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
 
 import com.baidu.mapapi.map.MapView;
-import com.baidu.mapapi.overlayutil.WalkingRouteOverlay;
-import com.baidu.mapapi.search.core.SearchResult;
-import com.baidu.mapapi.search.route.*;
 import com.mingle.myapplication.R;
 
 import java.util.List;
@@ -28,13 +22,9 @@ import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
-import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
-import com.mingle.myapplication.R;
-
-import java.util.List;
 
 public class TestMapActivity extends AppCompatActivity {
     //相关

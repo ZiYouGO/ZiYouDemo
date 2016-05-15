@@ -51,7 +51,7 @@
             android:value="QhefU2kel6d34HT7DqogUeNShh4it5b5" />
 
         <activity
-            android:name="com.mingle.ZiYou.Main.MainActivity"
+            android:name="com.mingle.ZiYou.main.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -61,13 +61,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.mingle.ZiYou.Content.MapActivity"
+            android:name="com.mingle.ZiYou.content.MapActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
-    <activity android:name="com.mingle.ZiYou.Content.TestMapActivity"></activity>
+    <activity android:name="com.mingle.ZiYou.content.TestMapActivity"></activity>
 
-    <activity android:name="com.mingle.ZiYou.Content.mxyOwnMapActivity"></activity>
+    <activity android:name="com.mingle.ZiYou.content.mxyOwnMapActivity"></activity>
 
     </application>
 

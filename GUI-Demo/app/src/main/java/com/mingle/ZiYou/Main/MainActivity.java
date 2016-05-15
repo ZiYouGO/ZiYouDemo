@@ -1,4 +1,4 @@
-package com.mingle.ZiYou.Main;
+package com.mingle.ZiYou.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,9 +14,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.mingle.ZiYou.Adapter.MyAdapter;
-import com.mingle.ZiYou.Content.MapActivity;
-import com.mingle.ZiYou.Content.TestMapActivity;
+import com.mingle.ZiYou.adapter.MyAdapter;
+import com.mingle.ZiYou.content.TestMapActivity;
 import com.mingle.myapplication.R;
 
 import java.util.ArrayList;
