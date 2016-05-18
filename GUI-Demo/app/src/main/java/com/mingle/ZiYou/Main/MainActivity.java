@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Intent intent = new Intent(MainActivity.this, MapActivity.class);
                 //测试用，启动TestMapActivity
-                Intent intent = new Intent(MainActivity.this, GPSActivity.class);
+                Intent intent = new Intent(MainActivity.this, TestMapActivity.class);
                 startActivity(intent);
             }
         });
