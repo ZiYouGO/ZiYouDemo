@@ -27,10 +27,13 @@ import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.search.core.SearchResult;
+import com.baidu.mapapi.search.route.BikingRouteResult;
 import com.baidu.mapapi.search.route.DrivingRouteResult;
 import com.baidu.mapapi.search.route.OnGetRoutePlanResultListener;
+import com.baidu.mapapi.search.route.PlanNode;
 import com.baidu.mapapi.search.route.RoutePlanSearch;
 import com.baidu.mapapi.search.route.TransitRouteResult;
+import com.baidu.mapapi.search.route.WalkingRoutePlanOption;
 import com.baidu.mapapi.search.route.WalkingRouteResult;
 import com.mingle.ZiYou.Main.MainActivity;
 import com.mingle.ZiYou.broadandservice.SoundService;
@@ -87,7 +90,49 @@ public class GPSActivity extends AppCompatActivity {
         //线路规划
         //-----------------------------------------------------------------------------
         //导航按钮事件
-        
+        mRoadplanBtn = (Button)findViewById(R.id.btn_roadplan);
+        mRoadplanBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSearch = RoutePlanSearch.newInstance();
+                //mSearch2 = RoutePlanSearch.newInstance();
+                OnGetRoutePlanResultListener listener = new OnGetRoutePlanResultListener() {
+                    @Override
+                    public void onGetWalkingRouteResult(WalkingRouteResult walkingRouteResult) {
+                        if (walkingRouteResult.error == SearchResult.ERRORNO.NO_ERROR) {
+                            WalkingRouteOverlay overlay = new WalkingRouteOverlay(mBaiduMap);
+                            mBaiduMap.setOnMarkerClickListener(overlay);
+                            overlay.setData(walkingRouteResult.getRouteLines().get(0));
+                            overlay.addToMap();
+                            overlay.zoomToSpan();
+                        } else Log.e("mxy", "no result");
+                    }
+
+                    @Override
+                    public void onGetTransitRouteResult(TransitRouteResult transitRouteResult) {
+
+                    }
+
+                    @Override
+                    public void onGetDrivingRouteResult(DrivingRouteResult drivingRouteResult) {
+
+                    }
+
+                    @Override
+                    public void onGetBikingRouteResult(BikingRouteResult bikingRouteResult) {
+
+                    }
+                };
+                mSearch.setOnGetRoutePlanResultListener(listener);
+                PlanNode stNode = PlanNode.withCityNameAndPlaceName("北京", "北京交通大学逸夫楼");
+                PlanNode enNode = PlanNode.withCityNameAndPlaceName("北京", "北京交通大学思源楼");
+                mSearch.walkingSearch((new WalkingRoutePlanOption())
+                        .from(stNode)
+                        .to(enNode));
+                //记得这里需要销毁
+                //mSearch.destroy();
+            }
+        });
         //-----------------------------------------------------------------------------
         //获取布局上的MapView组件，并设置地图类型与偏好
         mapView = (MapView) findViewById(R.id.b_gps_mapView);
