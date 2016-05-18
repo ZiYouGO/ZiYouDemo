@@ -26,6 +26,12 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.search.core.SearchResult;
+import com.baidu.mapapi.search.route.DrivingRouteResult;
+import com.baidu.mapapi.search.route.OnGetRoutePlanResultListener;
+import com.baidu.mapapi.search.route.RoutePlanSearch;
+import com.baidu.mapapi.search.route.TransitRouteResult;
+import com.baidu.mapapi.search.route.WalkingRouteResult;
 import com.mingle.ZiYou.Main.MainActivity;
 import com.mingle.ZiYou.broadandservice.SoundService;
 import com.mingle.myapplication.R;
@@ -37,8 +43,9 @@ import javax.microedition.khronos.opengles.GL10;
 public class GPSActivity extends AppCompatActivity {
     //UI相关
     private MapView mapView;
-    BaiduMap baiduMap;
-    Button mBtn;
+    private BaiduMap baiduMap;
+    private RoutePlanSearch mSearch;
+    Button mBtn, mRoadplanBtn;
 
     //定位相关
     public LocationClient mLocationClient = null;
@@ -53,12 +60,12 @@ public class GPSActivity extends AppCompatActivity {
     private Boolean musicState = true;
     //注册位置提醒监听事件后，可以通过SetNotifyLocation 来修改位置提醒设置，修改后立刻生效。
     //BDNotifyListner实现
-    public class NotifyLister extends BDNotifyListener {
-        public void onNotify(BDLocation mlocation, float distance){
-            //mVibrator01.vibrate(1000);//振动提醒已到设定位置附近
-            Toast.makeText(GPSActivity.this, "位置提醒响应", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    public class NotifyLister extends BDNotifyListener {
+//        public void onNotify(BDLocation mlocation, float distance){
+//            //mVibrator01.vibrate(1000);//振动提醒已到设定位置附近
+//            Toast.makeText(GPSActivity.this, "位置提醒响应", Toast.LENGTH_SHORT).show();
+//        }
+//    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +84,11 @@ public class GPSActivity extends AppCompatActivity {
             }
         });
 
+        //线路规划
+        //-----------------------------------------------------------------------------
+        //导航按钮事件
+        
+        //-----------------------------------------------------------------------------
         //获取布局上的MapView组件，并设置地图类型与偏好
         mapView = (MapView) findViewById(R.id.b_gps_mapView);
         baiduMap = mapView.getMap();

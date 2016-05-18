@@ -17,4 +17,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="播放导游词"/>
+
+    <Button
+        android:id="@+id/btn_roadplan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="线路规划"/>
 </LinearLayout>
