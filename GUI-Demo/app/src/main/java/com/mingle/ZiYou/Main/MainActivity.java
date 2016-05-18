@@ -15,7 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.mingle.ZiYou.Adapter.MyAdapter;
-import com.mingle.ZiYou.Content.MapActivity;
+import com.mingle.ZiYou.Content.*;
 import com.mingle.myapplication.R;
 
 import java.util.ArrayList;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Intent intent = new Intent(MainActivity.this, MapActivity.class);
                 //测试用，启动TestMapActivity
-                Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                Intent intent = new Intent(MainActivity.this, GPSActivity.class);
                 startActivity(intent);
             }
         });

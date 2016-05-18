@@ -31,7 +31,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -40,6 +39,8 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 手机振动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -66,6 +67,22 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.mingle.ZiYou.Content.TestMapActivity" />
+
+        <receiver
+            android:name="com.mingle.ZiYou.broadandservice.ProximityAlertReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name="com.mingle.ZiYou.Content.GPSActivity" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"></service>
+        <service
+            android:name="com.mingle.ZiYou.broadandservice.SoundService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>
