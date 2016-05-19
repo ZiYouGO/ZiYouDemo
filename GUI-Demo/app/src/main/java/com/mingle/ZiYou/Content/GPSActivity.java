@@ -149,7 +149,7 @@ public class GPSActivity extends AppCompatActivity {
         baiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
         baiduMap.setMyLocationEnabled(true);
         
-        LatLng cenpt = new LatLng(37.874504,121.619306);
+        LatLng cenpt = new LatLng(39.95799,116.349642);
         //定义地图状态
         MapStatus mMapStatus = new MapStatus.Builder()
                 .target(cenpt)
