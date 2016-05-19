@@ -1,0 +1,56 @@
+[0515/174230:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/174230:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/174230:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/174230:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/174231:WARNING:resource_bundle.cc(497)] locale resources are not loaded
+[0515/174234:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/174234:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/174234:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/174234:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/174251:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/174251:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/174251:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/174251:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/174251:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[0515/174344:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/174344:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/174344:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/174344:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/174344:WARNING:resource_bundle.cc(497)] locale resources are not loaded
+[0515/174344:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/174344:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/174344:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/174344:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/174348:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/174348:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/174348:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/174348:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/174348:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[0515/174654:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/174654:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/174654:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/174654:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/174654:WARNING:resource_bundle.cc(497)] locale resources are not loaded
+[0515/174659:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/174659:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/174659:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/174659:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/174709:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/174709:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/174709:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/174709:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/174709:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[0515/180528:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/180528:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/180528:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/180528:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/180529:WARNING:resource_bundle.cc(497)] locale resources are not loaded
+[0515/180530:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/180530:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/180530:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/180530:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/180718:WARNING:resource_bundle.cc(304)] locale_file_path.empty()
+[0515/180718:ERROR:main_delegate.cc(564)] Could not load locale pak for en-US
+[0515/180718:ERROR:main_delegate.cc(571)] Could not load cef.pak
+[0515/180718:ERROR:main_delegate.cc(588)] Could not load cef_100_percent.pak
+[0515/180738:ERROR:renderer_main.cc(207)] Running without renderer sandbox

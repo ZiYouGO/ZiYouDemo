@@ -31,6 +31,7 @@ public class MapActivity extends AppCompatActivity {
     Button Back;
     MapView mMapView = null;
     int  key=0;
+    int MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -56,6 +57,32 @@ public class MapActivity extends AppCompatActivity {
 
         setButton();
         setupCustomView();
+
+        //--------------------------------------mxymxymxy-start--------------------------------------------
+        //作者：马翔宇
+        //内容：gps临近警告
+
+        // 获取系统LocationManager服务
+//        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        // 定义交大东门的大致经度、纬度
+//        double longitude = 116.355547;
+//        double latitude = 39.954085;
+//        // 定义半径（1公里）
+//        float radius = 1000;
+//        // 定义Intent
+//        Intent intent = new Intent(this, ProximityAlertReceiver.class);
+//        // 将Intent包装成PendingIntent对象
+//        PendingIntent pi = PendingIntent.getBroadcast(this, -1, intent, 0);
+//        // 添加临近警告
+//        if ( ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+//
+//            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION},
+//                    MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION);
+//            locationManager.addProximityAlert(latitude, longitude, radius, -1, pi);
+//        }
+
+        //--------------------------------------mxymxymxy-end--------------------------------------------
+
     }
 
     private void setButton(){
