@@ -21,11 +21,13 @@ import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.MapStatus;
+import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.overlayutil.WalkingRouteOverlay;
 import com.baidu.mapapi.search.core.SearchResult;
 import com.baidu.mapapi.search.route.BikingRouteResult;
 import com.baidu.mapapi.search.route.DrivingRouteResult;
@@ -47,7 +49,7 @@ public class GPSActivity extends AppCompatActivity {
     //UI相关
     private MapView mapView;
     private BaiduMap baiduMap;
-    private RoutePlanSearch mSearch;
+    private RoutePlanSearch mSearch, mSearch2;
     Button mBtn, mRoadplanBtn;
 
     //定位相关
@@ -95,13 +97,13 @@ public class GPSActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mSearch = RoutePlanSearch.newInstance();
-                //mSearch2 = RoutePlanSearch.newInstance();
+                mSearch2 = RoutePlanSearch.newInstance();
                 OnGetRoutePlanResultListener listener = new OnGetRoutePlanResultListener() {
                     @Override
                     public void onGetWalkingRouteResult(WalkingRouteResult walkingRouteResult) {
                         if (walkingRouteResult.error == SearchResult.ERRORNO.NO_ERROR) {
-                            WalkingRouteOverlay overlay = new WalkingRouteOverlay(mBaiduMap);
-                            mBaiduMap.setOnMarkerClickListener(overlay);
+                            WalkingRouteOverlay overlay = new WalkingRouteOverlay(baiduMap);
+                            baiduMap.setOnMarkerClickListener(overlay);
                             overlay.setData(walkingRouteResult.getRouteLines().get(0));
                             overlay.addToMap();
                             overlay.zoomToSpan();
@@ -129,16 +131,37 @@ public class GPSActivity extends AppCompatActivity {
                 mSearch.walkingSearch((new WalkingRoutePlanOption())
                         .from(stNode)
                         .to(enNode));
+                mSearch2.setOnGetRoutePlanResultListener(listener);
+                PlanNode stNode2 = PlanNode.withCityNameAndPlaceName("北京", "北京交通大学思源楼");
+                PlanNode enNode2 = PlanNode.withCityNameAndPlaceName("北京", "北京交通大学思源西楼");
+                mSearch2.walkingSearch((new WalkingRoutePlanOption())
+                        .from(stNode2)
+                        .to(enNode2));
                 //记得这里需要销毁
                 //mSearch.destroy();
             }
         });
         //-----------------------------------------------------------------------------
+
         //获取布局上的MapView组件，并设置地图类型与偏好
         mapView = (MapView) findViewById(R.id.b_gps_mapView);
         baiduMap = mapView.getMap();
         baiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
         baiduMap.setMyLocationEnabled(true);
+        
+        LatLng cenpt = new LatLng(37.874504,121.619306);
+        //定义地图状态
+        MapStatus mMapStatus = new MapStatus.Builder()
+                .target(cenpt)
+                .zoom(18)
+                .build();
+        //定义MapStatusUpdate对象，以便描述地图状态将要发生的变化
+
+
+        MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.newMapStatus(mMapStatus);
+        //改变地图状态
+        baiduMap.setMapStatus(mMapStatusUpdate);
+
         //mCurrentMarker = BitmapDescriptorFactory.fromResource(R.drawable.icon_gcoding);
         //mCurrentMode = MyLocationConfiguration.LocationMode.NORMAL;
         //MyLocationConfiguration config = new MyLocationConfiguration(mCurrentMode,true,mCurrentMarker);
