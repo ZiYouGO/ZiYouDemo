@@ -2,6 +2,7 @@ package com.mingle.ZiYou.daoImpl;
 
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.mingle.ZiYou.bean.Comment;
@@ -22,11 +23,13 @@ public class SceneDao implements SceneInterface {
     private Scene new_scene=new Scene();
 
     public List<Scene> getSceneList() {
+        Log.i("size",sceneList.size()+"");
         return sceneList;
     }
 
     public void setSceneList(List<Scene> sceneList) {
-        this.sceneList = sceneList;
+        Log.i("memeda",sceneList.size()+"");
+        this.sceneList=sceneList;
     }
 
     public Scene getNew_scene() {
@@ -48,6 +51,8 @@ public class SceneDao implements SceneInterface {
                         Toast.LENGTH_SHORT).show();
                 for (Scene scene : object) {
                     sceneList.add(scene);
+//                    list.add(scene);
+//                    setSceneList(sceneList);
                 }
                 setSceneList(sceneList);
             }
