@@ -7,6 +7,7 @@ import com.mingle.ZiYou.bean.Scene;
 import com.mingle.ZiYou.daoImpl.PointDao;
 import com.mingle.ZiYou.daoImpl.SceneDao;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +36,8 @@ public class SceneInfor {
     public Point getPointByName(String ponitName,Context context){
         return pointDao.getPointByName(ponitName,context);
     }
-    //通过景点名字获取语音,暂定获取的是url
-    public String getMP3ByPointName(String ponitName,Context context){
+    //通过景点名字获取语音,暂定获取的file
+    public File getMP3ByPointName(String ponitName,Context context){
         return pointDao.getMP3ByPointName(ponitName,context);
     }
 

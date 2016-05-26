@@ -7,6 +7,7 @@ import com.mingle.ZiYou.bean.Comment;
 import com.mingle.ZiYou.bean.Point;
 import com.mingle.ZiYou.daoInterface.PointInterface;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,7 +66,7 @@ public class PointDao implements PointInterface{
         return point;
     }
     //通过景点名字获取语音,暂定获取的是url
-    public String getMP3ByPointName(String ponitName, Context context){
+    public File getMP3ByPointName(String ponitName, Context context){
 
         return null;
     }
