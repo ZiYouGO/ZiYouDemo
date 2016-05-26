@@ -2,3 +2,11 @@ GUI-Demo/.idea/misc.xml
 GUI-Demo/.idea/gradle.xml
 GUI-Demo/sweetsheet/sweetsheet.iml
 GUI-Demo/.idea/gradle.xml
+*.xml
+GUI-Demo/.idea/compiler.xml
+*.xml
+GUI-Demo/app/app.iml
+*.iml
+GUI-Demo/.idea/compiler.xml
+GUI-Demo/.idea/compiler.xml
+GUI-Demo/.idea/encodings.xml

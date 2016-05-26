@@ -26,20 +26,24 @@ public class SceneInfor {
     }
     //通过景区名字查找景区信息
     public Scene getSceneByName(String sceneName,Context context){
-        return sceneDao.getSceneByName(sceneName,context);
+        sceneDao.getSceneByName(sceneName,context);
+        return sceneDao.getNew_scene();
     }
     //通过景区名字获得该景区所有景点列表
     public List<Point> getPointDaoListBySceneName(String sceneName,Context context) {
         //getPointDaoListBySceneName是通过sid查询points
-        return pointDao.getPointDaoListBySceneId(getSceneByName(sceneName,context).getSid(),context);
+        pointDao.getPointDaoListBySceneId(getSceneByName(sceneName,context).getSid(),context);
+        return pointDao.getPointList();
     }
     //通过景点名字查找景点信息
     public Point getPointByName(String ponitName,Context context){
-        return pointDao.getPointByName(ponitName,context);
+        pointDao.getPointByName(ponitName,context);
+        return pointDao.getPoint();
     }
     //通过景点名字获取语音,暂定获取的是url
     public BmobFile getMP3ByPointName(String ponitName, Context context){
-        return pointDao.getMP3ByPointName(ponitName,context);
+        pointDao.getMP3ByPointName(ponitName,context);
+        return pointDao.getMp3();
     }
 
 
