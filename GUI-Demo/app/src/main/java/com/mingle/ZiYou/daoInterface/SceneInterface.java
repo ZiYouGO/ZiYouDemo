@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface SceneInterface {
     //获得景区所有列表
-    public List<Scene> getAllScenes( Context context);
+    public List<Scene> getAllScenes(Context context);
     //通过景区名字获得景区
     public Scene getSceneByName(String name, Context context);
 }

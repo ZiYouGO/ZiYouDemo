@@ -6,6 +6,8 @@ import com.mingle.ZiYou.bean.Point;
 
 import java.util.List;
 
+import cn.bmob.v3.datatype.BmobFile;
+
 /**
  * Created by jd on 2016/4/28.
  */
@@ -15,5 +17,5 @@ public interface PointInterface {
     //通过景点名字查找景点信息
     public Point getPointByName(String ponitName, Context context);
     //通过景点名字获取语音,暂定获取的是url
-    public String getMP3ByPointName(String ponitName, Context context);
+    public BmobFile getMP3ByPointName(String ponitName, Context context);
 }

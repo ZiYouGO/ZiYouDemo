@@ -16,6 +16,7 @@ import android.widget.ListView;
 
 import com.mingle.ZiYou.adapter.MyAdapter;
 import com.mingle.ZiYou.content.MapActivity;
+import com.mingle.ZiYou.content.TestMapActivity;
 import com.mingle.myapplication.R;
 
 import java.util.ArrayList;
@@ -36,10 +37,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        // 初始化 Bmob SDK
-        // 使用时请将第二个参数Application ID替换成你在Bmob服务器端创建的Application ID
         Bmob.initialize(this, "c1c024e7612cd05fcfecbc3d9909b3ee");
+        setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ListView listView=(ListView)findViewById(R.id.list);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -54,7 +54,9 @@ public class MainActivity extends AppCompatActivity
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                //Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                //测试用，启动TestMapActivity
+                Intent intent = new Intent(MainActivity.this, TestMapActivity.class);
                 startActivity(intent);
             }
         });
