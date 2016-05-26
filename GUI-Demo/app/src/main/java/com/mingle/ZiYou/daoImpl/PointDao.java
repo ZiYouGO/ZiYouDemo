@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.datatype.BmobFile;
 import cn.bmob.v3.listener.FindListener;
 
 /**
@@ -19,6 +20,7 @@ import cn.bmob.v3.listener.FindListener;
 public class PointDao implements PointInterface{
     private List<Point> pointList=new ArrayList<Point>();
     private Point point=new Point();
+    private BmobFile mp3;
     //通过景区id获得该景区所有景点列表
     public  List<Point> getPointDaoListBySceneId(int sceneId, final Context context){
         BmobQuery<Point> pointBmobQuery=new BmobQuery<Point>();
@@ -64,9 +66,28 @@ public class PointDao implements PointInterface{
         });
         return point;
     }
-    //通过景点名字获取语音,暂定获取的是url
-    public String getMP3ByPointName(String ponitName, Context context){
+    //通过景点名字获取语音
+    public BmobFile getMP3ByPointName(final String pointName, final Context context){
+//        final BmobFile mp3;
+        BmobQuery<Point> query=new BmobQuery<Point>();
+        query.addWhereEqualTo("pname",pointName);
+//查找所需文件
+       query.findObjects(context, new FindListener<Point>() {
+           @Override
+           public void onSuccess(List<Point> list) {
+               for (Point p : list) {
+                   mp3=p.getPmp3cn();
+                   Toast.makeText(context,"查询成功："+ p.getPmp3cn().getFilename(),
+                           Toast.LENGTH_SHORT).show();
+               }
+           }
 
-        return null;
+           @Override
+           public void onError(int i, String s) {
+               Toast.makeText(context,"查询失败："+s,
+                       Toast.LENGTH_SHORT).show();
+           }
+       });
+        return mp3;
     }
 }
