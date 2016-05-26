@@ -20,6 +20,23 @@ import cn.bmob.v3.listener.FindListener;
 public class SceneDao implements SceneInterface {
     private List<Scene> sceneList = new ArrayList<Scene>();//所有景区列表
     private Scene new_scene=new Scene();
+
+    public List<Scene> getSceneList() {
+        return sceneList;
+    }
+
+    public void setSceneList(List<Scene> sceneList) {
+        this.sceneList = sceneList;
+    }
+
+    public Scene getNew_scene() {
+        return new_scene;
+    }
+
+    public void setNew_scene(Scene new_scene) {
+        this.new_scene = new_scene;
+    }
+
     //获得所有景区列表
     public List<Scene> getAllScenes(final Context context){
         BmobQuery<Scene> sceneBmobQuery=new BmobQuery<Scene>();
@@ -32,6 +49,7 @@ public class SceneDao implements SceneInterface {
                 for (Scene scene : object) {
                     sceneList.add(scene);
                 }
+                setSceneList(sceneList);
             }
             @Override
             public void onError(int code, String msg) {
@@ -53,7 +71,7 @@ public class SceneDao implements SceneInterface {
                 Toast.makeText(context,"查询成功：共"+object.size()+"条数据。",
                         Toast.LENGTH_SHORT).show();
                 for (Scene scene : object) {
-                    new_scene=scene;
+                    setNew_scene(scene);
                 }
             }
             @Override

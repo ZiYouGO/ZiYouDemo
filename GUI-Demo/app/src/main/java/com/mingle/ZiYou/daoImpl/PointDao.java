@@ -57,7 +57,7 @@ public class PointDao implements PointInterface{
                 // TODO Auto-generated method stub
                 Toast.makeText(context,"查询成功：共"+object.size()+"条数据。",
                         Toast.LENGTH_SHORT).show();
-                pointList=object;
+                setPointList(object);
             }
             @Override
             public void onError(int code, String msg) {
@@ -79,7 +79,7 @@ public class PointDao implements PointInterface{
                 Toast.makeText(context,"查询成功：共"+object.size()+"条数据。",
                         Toast.LENGTH_SHORT).show();
                 for (Point p : object) {
-                    point=p;
+                    setPoint(p);
                 }
             }
             @Override
@@ -101,7 +101,7 @@ public class PointDao implements PointInterface{
             @Override
             public void onSuccess(List<Point> list) {
                 for (Point p : list) {
-                    mp3=p.getPmp3cn();
+                    setMp3(p.getPmp3cn());
                     Toast.makeText(context,"查询成功："+ p.getPmp3cn().getFilename(),
                             Toast.LENGTH_SHORT).show();
                 }
