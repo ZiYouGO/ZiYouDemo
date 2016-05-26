@@ -115,4 +115,9 @@ public class PointDao implements PointInterface{
         });
         return mp3;
     }
+    //根据景点名称下载整个景区语音文件
+    public String download(String sname){
+
+        return null;
+    }
 }
