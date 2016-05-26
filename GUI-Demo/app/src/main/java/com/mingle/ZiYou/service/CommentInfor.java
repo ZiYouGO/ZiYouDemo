@@ -21,7 +21,8 @@ public class CommentInfor {
     //通过景点名字获取该景点评论
     public List<Comment> getCommentsByPointName(String pointName,Context context){
         int id = pointDao.getPointByName(pointName,context).getPid();
-        return commentDao.getCommentsByPointId(id,context);
+        commentDao.getCommentsByPointId(id,context);
+        return commentDao.getComments();
     }
     //添加评论
     public void addCommentByPointName(String pointName,String comment,Context context){
