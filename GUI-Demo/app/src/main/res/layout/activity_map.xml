@@ -4,7 +4,7 @@
                 android:layout_height="match_parent"
                 android:background="#ff8b90af"
                 android:id="@+id/rl"
-                tools:context="com.mingle.ZiYou.Content.MainActivity">
+                tools:context="com.mingle.ZiYou.content.MainActivity">
 
     <ScrollView
         android:layout_width="fill_parent"

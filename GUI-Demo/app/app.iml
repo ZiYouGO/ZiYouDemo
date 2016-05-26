@@ -100,8 +100,8 @@
     <orderEntry type="library" exported="" name="bmob-im-2.0.3" level="project" />
     <orderEntry type="library" exported="" name="baidumapapi_cloud_v3_7_3" level="project" />
     <orderEntry type="library" exported="" name="play-services-appindexing-8.1.0" level="project" />
-    <orderEntry type="library" exported="" name="baidumapapi_base_v3_7_3" level="project" />
     <orderEntry type="library" exported="" name="baidumapapi_search_v3_7_3" level="project" />
+    <orderEntry type="library" exported="" name="baidumapapi_base_v3_7_3" level="project" />
     <orderEntry type="library" exported="" name="baidumapapi_radar_v3_7_3" level="project" />
     <orderEntry type="library" exported="" name="okhttp-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="design-23.3.0" level="project" />
@@ -110,8 +110,8 @@
     <orderEntry type="library" exported="" name="support-v4-23.3.0" level="project" />
     <orderEntry type="library" exported="" name="bmob-sdk-3.4.6" level="project" />
     <orderEntry type="library" exported="" name="BaiduLBS_Android" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-23.3.0" level="project" />
     <orderEntry type="library" exported="" name="okio-1.4.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-23.3.0" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-23.3.0" level="project" />
     <orderEntry type="library" exported="" name="animated-vector-drawable-23.3.0" level="project" />
     <orderEntry type="library" exported="" name="baidumapapi_map_v3_7_3" level="project" />
