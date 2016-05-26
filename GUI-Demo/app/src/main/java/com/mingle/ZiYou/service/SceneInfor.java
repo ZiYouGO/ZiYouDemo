@@ -10,6 +10,8 @@ import com.mingle.ZiYou.daoImpl.SceneDao;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.bmob.v3.datatype.BmobFile;
+
 /**
  * 所有景区景点资源信息
  * Created by Kinney on 2016/4/24.
@@ -36,7 +38,7 @@ public class SceneInfor {
         return pointDao.getPointByName(ponitName,context);
     }
     //通过景点名字获取语音,暂定获取的是url
-    public String getMP3ByPointName(String ponitName,Context context){
+    public BmobFile getMP3ByPointName(String ponitName, Context context){
         return pointDao.getMP3ByPointName(ponitName,context);
     }
 
