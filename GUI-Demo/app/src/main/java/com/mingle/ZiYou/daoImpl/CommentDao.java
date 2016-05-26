@@ -28,11 +28,20 @@ import cn.bmob.v3.listener.SaveListener;
  * Created by Kinney on 2016/4/24.
  */
 public class CommentDao implements CommentInterface {
+    List<Comment> comments=new ArrayList<Comment>();
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
 
     //通过景点id获取该景点评论
     public List<Comment> getCommentsByPointId(int pid, final Context context){
         //我们按游戏名统计所有玩家的总得分，并只返回总得分大于100的记录，并按时间降序
-       final List<Comment> comments=new ArrayList<Comment>();
+
         BmobQuery<Comment> query = new BmobQuery<Comment>();
         query.addWhereGreaterThanOrEqualTo("cgrade",5);
         query.order("-cgrade,createdAt");
@@ -45,6 +54,7 @@ public class CommentDao implements CommentInterface {
                 for (Comment comment : object) {
                     comments.add(comment);
                 }
+                setComments(comments);
             }
             @Override
             public void onError(int code, String msg) {
