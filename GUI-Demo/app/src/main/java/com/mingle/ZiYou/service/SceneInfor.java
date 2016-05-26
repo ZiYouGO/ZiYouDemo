@@ -22,7 +22,8 @@ public class SceneInfor {
 
     //获得所有景区列表
     public List<Scene> getSceneList(Context context) {
-        return sceneDao.getAllScenes(context);
+        sceneDao.getAllScenes(context);
+        return sceneDao.getSceneList();
     }
     //通过景区名字查找景区信息
     public Scene getSceneByName(String sceneName,Context context){

@@ -58,17 +58,17 @@ private List<Scene> scenes=new ArrayList<Scene>();
         setSupportActionBar(toolbar);
         getAllScenes();
         Log.i("size:1",scenes.size()+"");
-        List<Map<String, Object>> list=getData(scenes);
-        listView.setAdapter(new MyAdapter(this, list));
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Intent intent = new Intent(MainActivity.this, MapActivity.class);
-                //测试用，启动TestMapActivity
-                Intent intent = new Intent(MainActivity.this, TestMapActivity.class);
-                startActivity(intent);
-            }
-        });
+//        List<Map<String, Object>> list=getData(scenes);
+//        listView.setAdapter(new MyAdapter(this, list));
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                //Intent intent = new Intent(MainActivity.this, MapActivity.class);
+//                //测试用，启动TestMapActivity
+//                Intent intent = new Intent(MainActivity.this, TestMapActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         drawer.setDrawerListener(toggle);
 
@@ -175,7 +175,7 @@ private List<Scene> scenes=new ArrayList<Scene>();
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         //Intent intent = new Intent(MainActivity.this, MapActivity.class);
                         //测试用，启动TestMapActivity
-                        Intent intent = new Intent(MainActivity.this, TestMapActivity.class);
+                        Intent intent = new Intent(MainActivity.this, MapActivity.class);
                         startActivity(intent);
                     }
                 });
@@ -191,4 +191,5 @@ private List<Scene> scenes=new ArrayList<Scene>();
         });
 //        return sceneList;
     }
+
 }
